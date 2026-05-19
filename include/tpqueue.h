@@ -1,6 +1,6 @@
 // Copyright 2022 NNTU-CS
-#ifndef TPQUEUE_H
-#define TPQUEUE_H
+#ifndef INCLUDE_TPQUEUE_H_
+#define INCLUDE_TPQUEUE_H_
 
 struct SYM {
     char ch;
@@ -9,16 +9,16 @@ struct SYM {
 
 template <typename T>
 class TPQueue {
-private:
+ private:
     struct Node {
         T data;
         Node* next;
-        Node(const T& item) : data(item), next(nullptr) {}
+        explicit Node(const T& item) : data(item), next(nullptr) {}
     };
 
     Node* head;
 
-public:
+ public:
     TPQueue() : head(nullptr) {}
 
     TPQueue(const TPQueue&) = delete;
@@ -65,4 +65,4 @@ public:
     }
 };
 
-#endif // TPQUEUE_H
+#endif  // INCLUDE_TPQUEUE_H_
